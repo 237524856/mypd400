@@ -17,6 +17,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     basewindow.cpp \
+    carEffect/animation_view.cpp \
+    carEffect/chlider_curve_view.cpp \
+    carEffect/curve_view.cpp \
+    carEffect/dragpushbutton.cpp \
     car_mainwondow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -24,6 +28,10 @@ SOURCES += \
 
 HEADERS += \
     basewindow.h \
+    carEffect/animation_view.h \
+    carEffect/chlider_curve_view.h \
+    carEffect/curve_view.h \
+    carEffect/dragpushbutton.h \
     car_mainwondow.h \
     mainwindow.h \
     mytitlebar.h
