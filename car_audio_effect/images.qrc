@@ -7,5 +7,6 @@
         <file>images/close_btn.png</file>
         <file>images/max_btn.png</file>
         <file>images/min_btn.png</file>
+        <file>images/main_back.png</file>
     </qresource>
 </RCC>
