@@ -16,7 +16,7 @@ void car_mainWondow::createUI(){
 
     status = new QStatusBar(this);
 
-    menu[0] = new QMenu("文件");
+    menu[0] = new QMenu("x文件");
     menu[0]->addAction("编辑");
     menu[0]->addAction("查看");
     menu[0]->addAction("工具");
