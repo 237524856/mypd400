@@ -81,12 +81,7 @@ void chlider_curve_view::create_datasource(int freq,double gain,int select_btn_t
     m_Q2Arrs.clear();
     m_EQModeleArrs.clear();
 
-    m_pass_eq[select_btn_tag].freq = freq;
-    m_pass_eq[select_btn_tag].gain = gain;
-    m_pass_eq[select_btn_tag].Q = (double)YY_Qx100[116-btn_spaceX]/100.f/3;
 
-
-//qDebug()<<"kkk------33333xxxxxx-------------"<<m_pass_eq[2].zoom_space;
     if(m_selectcurrent_btnName == "115"){
 
         if(m_leftmouse_point.x()<m_mouse_point.x()-116){
@@ -111,8 +106,16 @@ void chlider_curve_view::create_datasource(int freq,double gain,int select_btn_t
         }
     }
 
-
+qDebug()<<"kkk------33333xxxxxx-------------"<<btn_spaceX<<m_pass_eq[select_btn_tag].zoom_space;
     m_pass_eq[select_btn_tag].zoom_space = btn_spaceX;
+
+    m_pass_eq[select_btn_tag].freq = freq;
+    m_pass_eq[select_btn_tag].gain = gain;
+    m_pass_eq[select_btn_tag].Q = (double)YY_Qx100[116-m_pass_eq[select_btn_tag].zoom_space]/100.f/3;
+
+
+
+
 
 
     for (int j = 0; j < mEqNum+2; j ++) {
@@ -213,7 +216,7 @@ void chlider_curve_view::createEQpointView(QVector<double>EQtotalNumerArrs,QVect
         if (k == eqIndex) {
             dragpushbutton *left_btn = mybuttons.at(mybuttons.count()-2);
             dragpushbutton *right_btn = mybuttons.at(mybuttons.count()-1);
-            qDebug()<<"xxxxaaaaaa"<<m_pass_eq[m_current_btnName.toUInt()-100].zoom_space<<btn->x()<<m_current_btnName.toUInt()-100;
+            //qDebug()<<"xxxxaaaaaa"<<m_pass_eq[m_current_btnName.toUInt()-100].zoom_space<<btn->x()<<m_current_btnName.toUInt()-100;
             left_btn->move(btn->x()-m_pass_eq[m_current_btnName.toUInt()-100].zoom_space,btn->y());
             right_btn->move(btn->x()+m_pass_eq[m_current_btnName.toUInt()-100].zoom_space,btn->y());
 
@@ -283,7 +286,18 @@ double chlider_curve_view::X2Freq(int x){
 //按钮按下的方法
 void chlider_curve_view::receive_btnpress_location(QPoint btn_point,QString btn_name){
 
-    m_oldleftmouse_point = btn_point;
+
+//    QPoint mypoint (m_oldleftmouse_point.x()-m_pass_eq[m_current_btnName.toUInt()-100].zoom_space,m_leftmouse_point.y());
+//    m_leftmouse_point =mypoint;
+
+    if(btn_name == "115"){
+
+    }else if(btn_name == "116"){
+
+    }else{
+        m_current_btnName = btn_name;
+        m_oldleftmouse_point = btn_point;
+    }
 }
 
 void chlider_curve_view::receive_btn_location(QPoint btn_point,QString btn_name){
@@ -298,6 +312,8 @@ void chlider_curve_view::receive_btn_location(QPoint btn_point,QString btn_name)
 
         this->m_mouse_point = btn_point;
         m_current_btnName = btn_name;
+
+          btn_spaceX = m_pass_eq[m_current_btnName.toUInt()-100].zoom_space;
 
     }
     double yy = X2Freq(m_mouse_point.x());

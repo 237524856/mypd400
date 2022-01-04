@@ -19,12 +19,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QFontDatabase::addApplicationFont(":/image/MBS_400/SourceHanSansCN Medium.ttf");
-    setFixedSize(1023,737);
+    setFixedSize(864,643);
 
-//    QLabel *back_left_image = new QLabel(this);
-//    back_left_image->resize(this->width(),this->height());
-//    back_left_image->move(0,0);
-   // back_left_image->setPixmap(QPixmap(":/images/bg_image.png"));
+    QLabel *back_left_image = new QLabel(this);
+    back_left_image->resize(this->width(),this->height());
+    back_left_image->move(0,0);
+    back_left_image->setPixmap(QPixmap(":/images/main_back.png"));
 
     //this->setWindowIcon(QIcon(":/images/logo.png"));
 }
