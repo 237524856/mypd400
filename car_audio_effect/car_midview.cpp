@@ -24,13 +24,13 @@ void car_midView::createUI(){
 
     QCheckBox *didianping_btn = new QCheckBox(back_left_image);
     didianping_btn->resize(64,28);
-    didianping_btn->move(76,148);
+    didianping_btn->move(86,164);
 
     didianping_btn->setStyleSheet(
                 "QCheckBox::indicator{width: 64px;height: 28px;color:rgb(255, 0, 0);}"
                 "QCheckBox::indicator:unchecked{border-image:url(:images/dianyuan_yinyuan_btn.png) 0 192 0 0;}"
                 "QCheckBox::indicator:unchecked:hover{border-image:url(:images/dianyuan_yinyuan_btn.png) 0 128 0 64;}"
-                "QCheckBox::indicator:checked{border-image:url(:/image/images/mbs400_newmute_btn.png) 0 0 0 60;}");
+                "QCheckBox::indicator:checked{border-image:url(:images/dianyuan_yinyuan_btn.png) 0 64 0 128;}");
     connect(didianping_btn, SIGNAL(clicked(bool)), this, SLOT(mute_click_status(bool)));
 
 
