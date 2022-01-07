@@ -2,21 +2,43 @@
 #pragma once
 #pragma execution_character_set("utf-8")
 #include "car_mainwondow.h"
+#include <QPushButton>
+#include <QApplication>
+#include "QDesktopWidget"
+#include <QFontDatabase>
 #include <QDebug>
+#include <QStandardPaths>
 
 
 car_mainWondow::car_mainWondow(QWidget *parent) : basewindow(parent)
 {
 
-    setFixedSize(1023,737);
+    setFixedSize(1008,723);
+    QFontDatabase::addApplicationFont(":/image/MBS_400/SourceHanSansCN Medium.ttf");
     createUI();
 }
 
 void car_mainWondow::createUI(){
 
+    QLabel *back_left_image = new QLabel(this);
+    back_left_image->move(0,723-700);
+    back_left_image->resize(this->width(),700);
+    back_left_image->setPixmap(QPixmap(":images/bg_image.png"));
+
+
+
+
+    //中间的视图
+    m_mid_midView = new car_midView(this);
+    m_mid_midView->move(360,161);
+    m_mid_midView->resize(235,491);
+    m_mid_midView->createUI();
+    m_mid_midView->show();
+
+
     status = new QStatusBar(this);
 
-    menu[0] = new QMenu("x文件");
+    menu[0] = new QMenu("名称");
     menu[0]->addAction("编辑");
     menu[0]->addAction("查看");
     menu[0]->addAction("工具");
@@ -28,11 +50,11 @@ void car_mainWondow::createUI(){
     act[1] = new QAction("打开",this);
     act[1]->setCheckable(true);
 
-    menu[1] = new QMenu("保存");
+    menu[1] = new QMenu("选项");
     menu[1]->addAction(act[0]);
     menu[1]->addAction(act[1]);
 
-    menu[2] = new QMenu("打印");
+    menu[2] = new QMenu("加密");
     menu[2]->addAction("打印设置");
     menu[2]->addMenu(menu[1]);
 
@@ -40,7 +62,10 @@ void car_mainWondow::createUI(){
     menuBar->addMenu(menu[0]);
     menuBar->addMenu(menu[1]);
     menuBar->addMenu(menu[2]);
-    menuBar->setGeometry(0,0,this->width()-300,30);
+
+    menuBar->setStyleSheet("QMenuBar{background-color:red;}");
+    menuBar->setGeometry(61,0,220,25);
+
 
     connect(menuBar,SIGNAL(triggered(QAction*)),this,SLOT(m_trigerMenu(QAction*)));
 }

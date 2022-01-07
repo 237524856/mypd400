@@ -7,6 +7,9 @@
 #include <QMenuBar>
 #include <QStatusBar>
 #include "carEffect/car_effect_mainview.h"
+#include "car_leftview.h"
+#include "car_rightview.h"
+#include "car_midview.h"
 
 class car_mainWondow : public basewindow
 {
@@ -22,6 +25,10 @@ public:
     void createUI();
 
     car_effect_mainView m_effect_mainView;
+
+    car_leftView *m_leftView;
+    car_rightView *m_rightView;
+    car_midView *m_mid_midView;
 
 
 public slots:

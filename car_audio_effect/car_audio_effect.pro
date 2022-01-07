@@ -22,7 +22,10 @@ SOURCES += \
     carEffect/chlider_curve_view.cpp \
     carEffect/curve_view.cpp \
     carEffect/dragpushbutton.cpp \
+    car_leftview.cpp \
     car_mainwondow.cpp \
+    car_midview.cpp \
+    car_rightview.cpp \
     main.cpp \
     mainwindow.cpp \
     mytitlebar.cpp
@@ -34,7 +37,10 @@ HEADERS += \
     carEffect/chlider_curve_view.h \
     carEffect/curve_view.h \
     carEffect/dragpushbutton.h \
+    car_leftview.h \
     car_mainwondow.h \
+    car_midview.h \
+    car_rightview.h \
     mainwindow.h \
     mytitlebar.h
 

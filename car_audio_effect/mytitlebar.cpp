@@ -4,9 +4,9 @@
 #include <QFile>
 #include <QMouseEvent>
 
-#define BUTTON_HEIGHT 36        // 按钮高度;
-#define BUTTON_WIDTH 32         // 按钮宽度;
-#define TITLE_HEIGHT 36         // 标题栏高度;
+#define BUTTON_HEIGHT 23        // 按钮高度;
+#define BUTTON_WIDTH 22         // 按钮宽度;
+#define TITLE_HEIGHT 23         // 标题栏高度;
 
 MyTitleBar::MyTitleBar(QWidget *parent)
     : QWidget(parent)
@@ -52,9 +52,9 @@ void MyTitleBar::initControl()
     m_pButtonMin = new QPushButton;
     //border-image:url(:/image/images/polar1.png)0,0,30,0;
     m_pButtonMin->setStyleSheet(
-                                "QPushButton{border-image:url(:/images/min_btn.png) 0 64 0 0;}"
-                                "QPushButton:hover{border-image:url(:/images/min_btn.png) 0 32 0 32;}"
-                                "QPushButton:pressed{border-image:url(:/images/min_btn.png) 0 0 0 64;}"
+                                "QPushButton{border-image:url(:/images/min_btn.png) 0 44 0 0;}"
+                                "QPushButton:hover{border-image:url(:/images/min_btn.png) 0 22 0 22;}"
+                                "QPushButton:pressed{border-image:url(:/images/min_btn.png) 0 0 0 44;}"
                                 );
 
     m_pButtonRestore = new QPushButton;
@@ -64,9 +64,9 @@ void MyTitleBar::initControl()
     m_pButtonMin->setFixedSize(QSize(BUTTON_WIDTH, BUTTON_HEIGHT));
     m_pButtonClose->setFixedSize(QSize(BUTTON_WIDTH, BUTTON_HEIGHT));
     m_pButtonClose->setStyleSheet(
-                "QPushButton{border-image:url(:/images/close_btn.png) 0 64 0 0;}"
-                "QPushButton:hover{border-image:url(:/images/close_btn.png) 0 32 0 32;}"
-                "QPushButton:pressed{border-image:url(:/images/close_btn.png) 0 0 0 64;}"
+                "QPushButton{border-image:url(:/images/close_btn.png) 0 44 0 0;}"
+                "QPushButton:hover{border-image:url(:/images/close_btn.png) 0 22 0 22;}"
+                "QPushButton:pressed{border-image:url(:/images/close_btn.png) 0 0 0 44;}"
 
                                   );
 
