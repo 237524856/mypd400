@@ -1,12 +1,14 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/bg_image.png</file>
         <file>images/SourceHanSansCN Medium.ttf</file>
-        <file>images/mbs400_close_button.png</file>
-        <file>images/mbs400_min_button.png</file>
+        <file>images/bg_image.png</file>
+        <file>images/mid_bgimage.png</file>
+        <file>images/mid_bgimage_high.png</file>
+        <file>images/mid_top.png</file>
+        <file>images/mid_top_high.png</file>
         <file>images/close_btn.png</file>
         <file>images/max_btn.png</file>
         <file>images/min_btn.png</file>
-        <file>images/main_back.png</file>
+        <file>images/dianyuan_yinyuan_btn.png</file>
     </qresource>
 </RCC>
