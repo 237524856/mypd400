@@ -25,7 +25,12 @@ void car_mainWondow::createUI(){
     back_left_image->resize(this->width(),700);
     back_left_image->setPixmap(QPixmap(":images/bg_image.png"));
 
-
+//左边的视图
+    m_leftView = new car_leftView(this);
+    m_leftView->resize(356,700);
+    m_leftView->move(0,23);
+    m_leftView->createUI();
+    m_leftView->show();
 
 
     //中间的视图
@@ -64,7 +69,7 @@ void car_mainWondow::createUI(){
     menuBar->addMenu(menu[2]);
 
     menuBar->setStyleSheet("QMenuBar{background-color:red;}");
-    menuBar->setGeometry(61,0,220,25);
+    menuBar->setGeometry(61,0,220,23);
 
 
     connect(menuBar,SIGNAL(triggered(QAction*)),this,SLOT(m_trigerMenu(QAction*)));

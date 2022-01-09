@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>images/SourceHanSansCN Medium.ttf</file>
-        <file>images/bg_image.png</file>
         <file>images/mid_bgimage.png</file>
         <file>images/mid_bgimage_high.png</file>
         <file>images/mid_top.png</file>
@@ -10,5 +9,14 @@
         <file>images/max_btn.png</file>
         <file>images/min_btn.png</file>
         <file>images/dianyuan_yinyuan_btn.png</file>
+        <file>images/main_vol_bgimg.png</file>
+        <file>images/vlume_mute.png</file>
+        <file>images/icon_shuchu.png</file>
+        <file>images/icon_shuru.png</file>
+        <file>images/shuru_shuchu_btn.png</file>
+        <file>images/guangqian.png</file>
+        <file>images/lanya.png</file>
+        <file>images/tongzhou_shuru.png</file>
+        <file>images/bg_image.png</file>
     </qresource>
 </RCC>

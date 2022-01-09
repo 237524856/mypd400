@@ -13,6 +13,10 @@ public:
 
     void createUI();
 
+public slots:
+void dianpin_click_status(bool);
+void guanbi_click_status(bool);
+
 signals:
 
 };

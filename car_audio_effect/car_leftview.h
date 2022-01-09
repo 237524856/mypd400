@@ -9,6 +9,8 @@ class car_leftView : public QWidget
 public:
     explicit car_leftView(QWidget *parent = nullptr);
 
+    void createUI();
+
 signals:
 
 };
