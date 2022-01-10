@@ -49,7 +49,6 @@ void car_leftView::createUI(){
 
     }
 
-
     QVector<QString>out_put_titles={"QPushButton{border-image:url(:/images/guangqian.png);}","QPushButton{border-image:url(:/images/tongzhou_shuru.png);}","QPushButton{border-image:url(:/images/lanya.png);}"};
     QVector<QString>out_put_labels={"光纤","同轴","蓝牙"};
     for (int i=0;i<3;i++) {
@@ -58,6 +57,11 @@ void car_leftView::createUI(){
         out_put_btn->resize(32,32);
         out_put_btn->setStyleSheet(out_put_titles[i]);
 
+        QLabel *out_put_label = new QLabel(this);
+        out_put_label->move(40,50+33*i);
+        out_put_label->resize(50,32);
+        out_put_label->setText(out_put_labels.at(i));
+        out_put_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;");
 
     }
 

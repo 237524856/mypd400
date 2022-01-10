@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QButtonGroup>
+#include <QCheckBox>
 
 class car_midView : public QWidget
 {
@@ -12,6 +14,9 @@ public:
 
 
     void createUI();
+
+    QButtonGroup *m_buttonGroup;
+
 
 public slots:
 void dianpin_click_status(bool);

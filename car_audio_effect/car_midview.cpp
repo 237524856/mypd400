@@ -96,7 +96,20 @@ void car_midView::createUI(){
     connect(mute_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
 
+    for (int i=0;i<2;i++) {
+        QCheckBox *xiaolaba_btn = new QCheckBox(this);
+        xiaolaba_btn->resize(20,20);
+        xiaolaba_btn->move(37+ i*145,126 );
+        xiaolaba_btn->setStyleSheet(
+                    "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                    "QCheckBox::indicator:unchecked{border-image:url(:images/xiaolaba_btn.png) 0 140 0 0;}"
+                    "QCheckBox::indicator:unchecked:hover{border-image:url(:images/xiaolaba_btn.png) 0 120 0 20;}"
+                    "QCheckBox::indicator:checked{border-image:url(:images/xiaolaba_btn.png) 0 100 0 40;}");
+        connect(xiaolaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+    }
 
+
+    m_buttonGroup = new QButtonGroup();
 }
 void car_midView::dianpin_click_status(bool is_open){
 

@@ -18,5 +18,8 @@
         <file>images/lanya.png</file>
         <file>images/tongzhou_shuru.png</file>
         <file>images/bg_image.png</file>
+        <file>images/dalaba_btn.png</file>
+        <file>images/xiaolaba_btn.png</file>
+        <file>images/zhonglaba_btn.png</file>
     </qresource>
 </RCC>
