@@ -97,50 +97,77 @@ void car_midView::createUI(){
     connect(mute_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
 
-    QButtonGroup *m_buttonGroup = new QButtonGroup();
+
+
+    //各种按钮
+    m_buttonGroup = new QButtonGroup();
     m_buttonGroup->setExclusive(true);
 
-    for (int i=0;i<2;i++) {
-        QCheckBox *xiaolaba_btn = new QCheckBox(this);
-        xiaolaba_btn->resize(20,20);
-        xiaolaba_btn->move(37+ i*145,126);
-        xiaolaba_btn->setStyleSheet(
-                    "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
-                    "QCheckBox::indicator:unchecked{border-image:url(:images/xiaolaba_btn.png) 0 140 0 0;}"
-                    "QCheckBox::indicator:unchecked:hover{border-image:url(:images/xiaolaba_btn.png) 0 120 0 20;}"
-                    "QCheckBox::indicator:checked{border-image:url(:images/xiaolaba_btn.png) 0 60 0 80;}");
-        connect(xiaolaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
-        m_buttonGroup->addButton(xiaolaba_btn);
+    for (int j=0;j<2;j++) {
+        for (int i=0;i<2;i++) {
+            QCheckBox *xiaolaba_btn = new QCheckBox(this);
+            xiaolaba_btn->resize(20,20);
+            xiaolaba_btn->move(37+ i*145,126 +120*j);
+            xiaolaba_btn->setStyleSheet(
+                        "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                        "QCheckBox::indicator:unchecked{border-image:url(:images/xiaolaba_btn.png) 0 140 0 0;}"
+                        "QCheckBox::indicator:unchecked:hover{border-image:url(:images/xiaolaba_btn.png) 0 120 0 20;}"
+                        "QCheckBox::indicator:checked{border-image:url(:images/xiaolaba_btn.png) 0 60 0 80;}");
+            connect(xiaolaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+            m_buttonGroup->addButton(xiaolaba_btn);
 
 
 
-        QCheckBox *zhonglaba_btn = new QCheckBox(this);
-        zhonglaba_btn->resize(25,25);
-        zhonglaba_btn->move(37+ i*145,126+28);
-        zhonglaba_btn->setStyleSheet(
-                    "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
-                    "QCheckBox::indicator:unchecked{border-image:url(:images/zhonglaba_btn.png) 0 175 0 0;}"
-                    "QCheckBox::indicator:unchecked:hover{border-image:url(:images/zhonglaba_btn.png) 0 150 0 25;}"
-                    "QCheckBox::indicator:checked{border-image:url(:images/zhonglaba_btn.png) 0 75 0 100;}");
-        connect(zhonglaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
-        m_buttonGroup->addButton(zhonglaba_btn);
+            QCheckBox *zhonglaba_btn = new QCheckBox(this);
+            zhonglaba_btn->resize(25,25);
+            zhonglaba_btn->move(37+ i*145,126+28 +120*j);
+            zhonglaba_btn->setStyleSheet(
+                        "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                        "QCheckBox::indicator:unchecked{border-image:url(:images/zhonglaba_btn.png) 0 175 0 0;}"
+                        "QCheckBox::indicator:unchecked:hover{border-image:url(:images/zhonglaba_btn.png) 0 150 0 25;}"
+                        "QCheckBox::indicator:checked{border-image:url(:images/zhonglaba_btn.png) 0 75 0 100;}");
+            connect(zhonglaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+            m_buttonGroup->addButton(zhonglaba_btn);
 
-        QCheckBox *dalaba_btn = new QCheckBox(this);
-        dalaba_btn->resize(34,34);
-        dalaba_btn->move(37+ i*145,126+28+28);
-        dalaba_btn->setStyleSheet(
-                    "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
-                    "QCheckBox::indicator:unchecked{border-image:url(:images/dalaba_btn.png) 0 238 0 0;}"
-                    "QCheckBox::indicator:unchecked:hover{border-image:url(:images/dalaba_btn.png) 0 204 0 34;}"
-                    "QCheckBox::indicator:checked{border-image:url(:images/dalaba_btn.png) 0 102 0 136;}");
-        connect(dalaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
-        m_buttonGroup->addButton(dalaba_btn);
-
-
+            QCheckBox *dalaba_btn = new QCheckBox(this);
+            dalaba_btn->resize(34,34);
+            dalaba_btn->move(37+ i*145,126+28+28 +120*j);
+            dalaba_btn->setStyleSheet(
+                        "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                        "QCheckBox::indicator:unchecked{border-image:url(:images/dalaba_btn.png) 0 238 0 0;}"
+                        "QCheckBox::indicator:unchecked:hover{border-image:url(:images/dalaba_btn.png) 0 204 0 34;}"
+                        "QCheckBox::indicator:checked{border-image:url(:images/dalaba_btn.png) 0 102 0 136;}");
+            connect(dalaba_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+            m_buttonGroup->addButton(dalaba_btn);
+        }
     }
 
 
-    m_buttonGroup = new QButtonGroup();
+    QCheckBox *top_btn1 = new QCheckBox(this);
+    top_btn1->resize(20,20);
+    top_btn1->move(84,126);
+    top_btn1->setStyleSheet(
+                "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                "QCheckBox::indicator:unchecked{border-image:url(:images/xiaolaba_btn_bottom.png) 0 140 0 0;}"
+                "QCheckBox::indicator:unchecked:hover{border-image:url(:images/xiaolaba_btn_bottom.png) 0 120 0 20;}"
+                "QCheckBox::indicator:checked{border-image:url(:images/xiaolaba_btn_bottom.png) 0 60 0 80;}");
+    connect(top_btn1, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+    m_buttonGroup->addButton(top_btn1);
+
+    QCheckBox *top_btn2 = new QCheckBox(this);
+    top_btn2->resize(25,25);
+    top_btn2->move(37+145,138);
+    top_btn2->setStyleSheet(
+                "QCheckBox::indicator{width: 20px;height: 20px;color:rgb(255, 0, 0);}"
+                "QCheckBox::indicator:unchecked{border-image:url(:images/zhonglaba_btn_bottom.png) 0 175 0 0;}"
+                "QCheckBox::indicator:unchecked:hover{border-image:url(:images/zhonglaba_btn_bottom.png) 0 150 0 25;}"
+                "QCheckBox::indicator:checked{border-image:url(:images/zhonglaba_btn_bottom.png) 0 75 0 100;}");
+    connect(top_btn2, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+    m_buttonGroup->addButton(top_btn2);
+
+
+
+
 }
 void car_midView::dianpin_click_status(bool is_open){
 

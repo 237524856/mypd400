@@ -21,5 +21,7 @@
         <file>images/dalaba_btn.png</file>
         <file>images/xiaolaba_btn.png</file>
         <file>images/zhonglaba_btn.png</file>
+        <file>images/xiaolaba_btn_bottom.png</file>
+        <file>images/zhonglaba_btn_bottom.png</file>
     </qresource>
 </RCC>
