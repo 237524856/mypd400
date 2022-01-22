@@ -17,10 +17,16 @@ public:
 
     QButtonGroup *m_buttonGroup;
 
+    QLabel *m_top_image;
+
+    QLabel *m_back_left_image;
+
 
 public slots:
 void dianpin_click_status(bool);
 void guanbi_click_status(bool);
+void mute_click(int);
+void guanbi_btn_click(int);
 
 signals:
 

@@ -4,7 +4,6 @@
         <file>images/mid_bgimage.png</file>
         <file>images/mid_bgimage_high.png</file>
         <file>images/mid_top.png</file>
-        <file>images/mid_top_high.png</file>
         <file>images/close_btn.png</file>
         <file>images/max_btn.png</file>
         <file>images/min_btn.png</file>
@@ -18,10 +17,19 @@
         <file>images/lanya.png</file>
         <file>images/tongzhou_shuru.png</file>
         <file>images/bg_image.png</file>
-        <file>images/dalaba_btn.png</file>
         <file>images/xiaolaba_btn.png</file>
-        <file>images/zhonglaba_btn.png</file>
         <file>images/xiaolaba_btn_bottom.png</file>
+        <file>images/xiaolaba_left.png</file>
+        <file>images/zhonglaba_btn.png</file>
+        <file>images/zhonglaba_left.png</file>
         <file>images/zhonglaba_btn_bottom.png</file>
+        <file>images/laba_zhongshang.png</file>
+        <file>images/laba_zhongshang_left.png</file>
+        <file>images/dalaba_btn.png</file>
+        <file>images/dalaba_btn_left.png</file>
+        <file>images/main_mute.png</file>
+        <file>images/yinliang_jia.png</file>
+        <file>images/mid_top_high.png</file>
+        <file>images/dts.png</file>
     </qresource>
 </RCC>
