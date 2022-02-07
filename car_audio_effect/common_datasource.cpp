@@ -1,6 +1,3 @@
-#include "common_datasource.h"
+﻿#include "common_datasource.h"
 
-common_datasource::common_datasource(QObject *parent) : QObject(parent)
-{
-
-}
+QVector<int>volumes;

@@ -7,9 +7,16 @@
 #include <QVector>
 #include <QCheckBox>
 
+#include "common_datasource.h"
+#include <QDebug>
+
 car_leftView::car_leftView(QWidget *parent) : QWidget(parent)
 {
 
+    for (int i=0;i<19;i++) {
+
+       volumes.push_back(30);
+    }
 }
 void car_leftView::createUI(){
 
@@ -36,7 +43,7 @@ void car_leftView::createUI(){
     shuru_btn_label->resize(48,15);
     shuru_btn_label->move(0,0);
     shuru_btn_label->setText("输入类型");
-    shuru_btn_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;");
+    shuru_btn_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;font-family:'Source Han Sans CN Medium'");
 
 
 
@@ -46,7 +53,7 @@ void car_leftView::createUI(){
         title_label->resize(42,175/4);
         title_label->move(175/4*i+182,0);
         title_label->setText(mytitles.at(i));
-        title_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;");
+        title_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;font-family:'Source Han Sans CN Medium'");
 
     }
 
@@ -62,7 +69,7 @@ void car_leftView::createUI(){
         out_put_label->move(40,50+33*i);
         out_put_label->resize(50,32);
         out_put_label->setText(out_put_labels.at(i));
-        out_put_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;");
+        out_put_label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;font-family:'Source Han Sans CN Medium'");
 
     }
 
@@ -76,12 +83,15 @@ void car_leftView::createUI(){
     connect(dst_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
 
+    QFont font;
+    font.setFamily("Source Han Sans CN Medium");
+    font.setPixelSize(15);
     for (int i=0;i<8;i++) {
 
         QLabel *label = new QLabel(this);
-        label->move(50,140+i*288/8);
+        label->move(50,140+i*280/8);
         label->resize(20,50);
-        label->setStyleSheet("font-size:10px;color:rgb(255,255,255);qproperty-alignment: AlignCenter;");
+        label->setStyleSheet("color:white;background-color:transparent;font-size:10px;font-family:'Source Han Sans CN Medium'");
         label->setText(QString::number(i+1,10));
     }
 
@@ -108,6 +118,29 @@ void car_leftView::createUI(){
                     "QCheckBox::indicator:checked{border-image:url(:images/main_mute.png) 0 60 0 80;}");
         connect(mute_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
+        myline_edit *edit = new myline_edit(this);
+        edit->resize(20,20);
+        edit->move(280,51+i*34);
+        qDebug()<<"xxxx"<<volumes;
+        edit->setText(QString::number(volumes.at(i),10));
+        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keyup(int)));
+        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keydown(int)));
+
     }
 
+
+
+
+    //mylines
+}
+void car_leftView::myline_edit_keyup(int block_value){
+
+    myline_edit *edit = dynamic_cast<myline_edit *>(sender());
+    edit->setText(QString::number(block_value,10));
+    qDebug()<<"xxxx"<<block_value;
+}
+void car_leftView::myline_edit_keydown(int block_value){
+    myline_edit *edit = dynamic_cast<myline_edit *>(sender());
+    edit->setText(QString::number(block_value,10));
+    qDebug()<<"xxxx"<<block_value;
 }

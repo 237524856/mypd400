@@ -93,8 +93,8 @@ void car_midView::createUI(){
     mute_btn->setStyleSheet(
                 "QCheckBox::indicator{width: 28px;height: 28px;color:rgb(255, 0, 0);}"
                 "QCheckBox::indicator:unchecked{border-image:url(:images/vlume_mute.png) 0 196 0 0;}"
-                "QCheckBox::indicator:unchecked:hover{border-image:url(:images/vlume_mute.png) 0 128 0 64;}"
-                "QCheckBox::indicator:checked{border-image:url(:images/vlume_mute.png) 0 64 0 128;}");
+                "QCheckBox::indicator:unchecked:hover{border-image:url(:images/vlume_mute.png) 0 168 0 28;}"
+                "QCheckBox::indicator:checked{border-image:url(:images/vlume_mute.png) 0 84 0 112;}");
     connect(mute_btn, SIGNAL(stateChanged(int)), this, SLOT(mute_click(int)));
 
 

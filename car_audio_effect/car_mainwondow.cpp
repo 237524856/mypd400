@@ -14,7 +14,7 @@ car_mainWondow::car_mainWondow(QWidget *parent) : basewindow(parent)
 {
 
     setFixedSize(1008,723);
-    QFontDatabase::addApplicationFont(":/image/MBS_400/SourceHanSansCN Medium.ttf");
+    QFontDatabase::addApplicationFont(":/images/SourceHanSansCN Medium.ttf");
     createUI();
 }
 

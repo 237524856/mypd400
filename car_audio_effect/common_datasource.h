@@ -1,16 +1,10 @@
-#ifndef COMMON_DATASOURCE_H
+﻿#ifndef COMMON_DATASOURCE_H
 #define COMMON_DATASOURCE_H
 
 #include <QObject>
+#include <QVector>
 
-class common_datasource : public QObject
-{
-    Q_OBJECT
-public:
-    explicit common_datasource(QObject *parent = nullptr);
 
-signals:
-
-};
+extern QVector<int>volumes;
 
 #endif // COMMON_DATASOURCE_H

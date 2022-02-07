@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>images/SourceHanSansCN Medium.ttf</file>
         <file>images/mid_bgimage.png</file>
-        <file>images/mid_bgimage_high.png</file>
         <file>images/mid_top.png</file>
         <file>images/close_btn.png</file>
         <file>images/max_btn.png</file>
@@ -29,7 +28,8 @@
         <file>images/dalaba_btn_left.png</file>
         <file>images/main_mute.png</file>
         <file>images/yinliang_jia.png</file>
-        <file>images/mid_top_high.png</file>
         <file>images/dts.png</file>
+        <file>images/mid_bgimage_high.png</file>
+        <file>images/mid_top_high.png</file>
     </qresource>
 </RCC>

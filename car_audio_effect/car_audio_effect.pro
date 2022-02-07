@@ -26,8 +26,10 @@ SOURCES += \
     car_mainwondow.cpp \
     car_midview.cpp \
     car_rightview.cpp \
+    common_datasource.cpp \
     main.cpp \
     mainwindow.cpp \
+    myline_edit.cpp \
     mytitlebar.cpp
 
 HEADERS += \
@@ -41,7 +43,9 @@ HEADERS += \
     car_mainwondow.h \
     car_midview.h \
     car_rightview.h \
+    common_datasource.h \
     mainwindow.h \
+    myline_edit.h \
     mytitlebar.h
 
 FORMS += \
