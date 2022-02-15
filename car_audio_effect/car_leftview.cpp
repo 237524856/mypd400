@@ -6,7 +6,7 @@
 #include "QPushButton"
 #include <QVector>
 #include <QCheckBox>
-
+#include "fenpinqi_view.h"
 #include "common_datasource.h"
 #include <QDebug>
 
@@ -82,21 +82,50 @@ void car_leftView::createUI(){
                 "QCheckBox::indicator:unchecked{border-image:url(:images/dts.png);}");
     connect(dst_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
+    for(int i=0;i<4;i++){
+        QCheckBox *shuruimg_btn = new QCheckBox(this);
+        shuruimg_btn->resize(32,32);
+        shuruimg_btn->move(10,440+i*68);
+        shuruimg_btn->setStyleSheet(
+                    "QCheckBox::indicator{width:32px;height:32px;color:rgb(255, 0, 0);}"
+                    "QCheckBox::indicator:unchecked{border-image:url(:images/shuru_img.png);}");
+        connect(shuruimg_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
+    }
+
 
     QFont font;
     font.setFamily("Source Han Sans CN Medium");
     font.setPixelSize(15);
-    for (int i=0;i<8;i++) {
+    for (int i=0;i<16;i++) {
 
         QLabel *label = new QLabel(this);
-        label->move(50,140+i*280/8);
-        label->resize(20,50);
+        label->move(50,140+i*34);
+        label->resize(30,50);
         label->setStyleSheet("color:white;background-color:transparent;font-size:10px;font-family:'Source Han Sans CN Medium'");
         label->setText(QString::number(i+1,10));
+        if(i>7){
+            QString str = "输入";
+            label->setText(str+QString::number(i+1-8,10));
+        }
     }
 
 
     for (int i=0;i<19;i++) {
+
+        //分频器
+        fenpinqi_view *fenpinView = new fenpinqi_view(this);
+        fenpinView->resize(30,20);
+        fenpinView->move(180,51+i*34);
+
+        if(i>2 ){
+
+            QPushButton *shuru_btn = new QPushButton(this);
+            shuru_btn->resize(55,20);
+            shuru_btn->move(180-22-60,51+i*34);
+            shuru_btn->setText("前左高频");
+            shuru_btn->setStyleSheet("color:white;background-color:transparent;border: 2px solid rgb(57,57,57);font-size:9px;font-family:'Source Han Sans CN Medium'");
+        }
+
 
         QCheckBox *xiangwei_btn = new QCheckBox(this);
         xiangwei_btn->resize(20,20);

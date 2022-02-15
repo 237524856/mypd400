@@ -31,5 +31,6 @@
         <file>images/dts.png</file>
         <file>images/mid_bgimage_high.png</file>
         <file>images/mid_top_high.png</file>
+        <file>images/shuru_img.png</file>
     </qresource>
 </RCC>
