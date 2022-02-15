@@ -10,6 +10,7 @@
 #include "common_datasource.h"
 #include <QDebug>
 
+
 car_leftView::car_leftView(QWidget *parent) : QWidget(parent)
 {
 
@@ -109,7 +110,6 @@ void car_leftView::createUI(){
         }
     }
 
-
     for (int i=0;i<19;i++) {
 
         //分频器
@@ -118,12 +118,12 @@ void car_leftView::createUI(){
         fenpinView->move(180,51+i*34);
 
         if(i>2 ){
-
-            QPushButton *shuru_btn = new QPushButton(this);
-            shuru_btn->resize(55,20);
-            shuru_btn->move(180-22-60,51+i*34);
-            shuru_btn->setText("前左高频");
-            shuru_btn->setStyleSheet("color:white;background-color:transparent;border: 2px solid rgb(57,57,57);font-size:9px;font-family:'Source Han Sans CN Medium'");
+            QPushButton *ch_shuru_btn = new QPushButton(this);
+            ch_shuru_btn->resize(55,20);
+            ch_shuru_btn->move(180-22-60,51+i*34);
+            ch_shuru_btn->setText("前左高频");
+            ch_shuru_btn->setStyleSheet("color:white;background-color:transparent;border: 2px solid rgb(57,57,57);font-size:9px;font-family:'Source Han Sans CN Medium'");
+            connect(ch_shuru_btn, SIGNAL(clicked()), this, SLOT(shuru_click()));
         }
 
 
@@ -154,13 +154,19 @@ void car_leftView::createUI(){
         edit->setText(QString::number(volumes.at(i),10));
         connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keyup(int)));
         connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keydown(int)));
-
     }
 
-
-
-
     //mylines
+
+
+
+
+    m_show_list_view = new show_list_view(this);
+    m_show_list_view->resize(100,20*6);
+    m_show_list_view->move(20,20);
+    m_show_list_view->createUI();
+//    m_show_list_view->setFocusPolicy(Qt::NoFocus);
+
 }
 void car_leftView::myline_edit_keyup(int block_value){
 
@@ -173,3 +179,25 @@ void car_leftView::myline_edit_keydown(int block_value){
     edit->setText(QString::number(block_value,10));
     qDebug()<<"xxxx"<<block_value;
 }
+void car_leftView::shuru_click(){
+
+    QPushButton *btn = dynamic_cast<QPushButton *>(sender());
+    qDebug()<<"xxxx"<<btn->x()<<btn->y();
+
+
+    QPoint GlobalPoint(btn->mapToGlobal(QPoint(0, 0)));//获取控件在窗体中的坐标
+    int x = GlobalPoint.x();
+    int y = GlobalPoint.y();
+
+    m_show_list_view->move(x,y+20);
+    m_show_list_view->show();
+
+//    m_listWidget_default->show();
+//    m_listWidget_default->move(btn->x(),btn->y()+20);
+}
+void car_leftView::mousePressEvent(QMouseEvent *qevent)        //鼠标按下事件
+{
+
+    //m_show_list_view->hide();
+}
+
