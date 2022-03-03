@@ -15,7 +15,6 @@
         <file>images/guangqian.png</file>
         <file>images/lanya.png</file>
         <file>images/tongzhou_shuru.png</file>
-        <file>images/bg_image.png</file>
         <file>images/xiaolaba_btn.png</file>
         <file>images/xiaolaba_btn_bottom.png</file>
         <file>images/xiaolaba_left.png</file>
@@ -32,5 +31,6 @@
         <file>images/mid_bgimage_high.png</file>
         <file>images/mid_top_high.png</file>
         <file>images/shuru_img.png</file>
+        <file>images/bg_image.png</file>
     </qresource>
 </RCC>

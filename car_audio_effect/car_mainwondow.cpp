@@ -40,6 +40,13 @@ void car_mainWondow::createUI(){
     m_mid_midView->createUI();
     m_mid_midView->show();
 
+    //右边的视图
+    m_rightView = new car_rightView(this);
+    m_rightView->resize(616,700);
+    m_rightView->move(360+235,23);
+    m_rightView->createUI();
+    m_rightView->show();
+
 
     status = new QStatusBar(this);
 
