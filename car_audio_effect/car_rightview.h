@@ -12,6 +12,10 @@ public:
 
 signals:
 
+
+public slots:
+    void shuchu_click();
+
 };
 
 #endif // CAR_RIGHTVIEW_H

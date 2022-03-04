@@ -27,6 +27,7 @@ SOURCES += \
     car_midview.cpp \
     car_rightview.cpp \
     common_datasource.cpp \
+    custom_list_item.cpp \
     fenpinqi_view.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -47,6 +48,7 @@ HEADERS += \
     car_midview.h \
     car_rightview.h \
     common_datasource.h \
+    custom_list_item.h \
     fenpinqi_view.h \
     mainwindow.h \
     myline_edit.h \

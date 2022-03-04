@@ -32,5 +32,6 @@
         <file>images/mid_top_high.png</file>
         <file>images/shuru_img.png</file>
         <file>images/bg_image.png</file>
+        <file>images/right_shuru_img.png</file>
     </qresource>
 </RCC>

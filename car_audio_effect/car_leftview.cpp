@@ -137,6 +137,14 @@ void car_leftView::createUI(){
                     "QCheckBox::indicator:checked{border-image:url(:images/yinliang_jia.png) 0 60 0 80;}");
         connect(xiangwei_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
+        myline_edit *edit = new myline_edit(this);
+        edit->resize(20,20);
+        edit->move(280,51+i*34);
+        qDebug()<<"xxxx"<<volumes;
+        edit->setText(QString::number(volumes.at(i),10));
+        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keyup(int)));
+        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keydown(int)));
+
         QCheckBox *mute_btn = new QCheckBox(this);
         mute_btn->resize(20,20);
         mute_btn->move(322,51+i*34);
@@ -147,22 +155,14 @@ void car_leftView::createUI(){
                     "QCheckBox::indicator:checked{border-image:url(:images/main_mute.png) 0 60 0 80;}");
         connect(mute_btn, SIGNAL(clicked(bool)), this, SLOT(volue_mute_btn_click_status(bool)));
 
-        myline_edit *edit = new myline_edit(this);
-        edit->resize(20,20);
-        edit->move(280,51+i*34);
-        qDebug()<<"xxxx"<<volumes;
-        edit->setText(QString::number(volumes.at(i),10));
-        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keyup(int)));
-        connect(edit, SIGNAL(block_key_up(int)), this, SLOT(myline_edit_keydown(int)));
+
     }
 
     //mylines
 
 
-
-
     m_show_list_view = new show_list_view(this);
-    m_show_list_view->resize(100,20*6);
+    m_show_list_view->resize(78,24*6);
     m_show_list_view->move(20,20);
     m_show_list_view->createUI();
 //    m_show_list_view->setFocusPolicy(Qt::NoFocus);

@@ -26,12 +26,17 @@ protected:
     void mouseReleaseEvent(QMouseEvent *qevent);         //鼠标释放事件
     void mouseMoveEvent(QMouseEvent *qevent);             //鼠标移动事件
 
+    void enterEvent(QEvent *);                      //进入QWidget瞬间事件
+    void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
+
+
     //非活跃状态的
     virtual void focusOutEvent(QFocusEvent *e);
 
 
 public slots:
     void audio_click(int);
+    void select_item(QListWidgetItem*);
 
 signals:
 
