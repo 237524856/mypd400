@@ -162,9 +162,10 @@ void car_leftView::createUI(){
 
 
     m_show_list_view = new show_list_view(this);
-    m_show_list_view->resize(78,24*6);
+    m_show_list_view->resize(78,24*6+2);
     m_show_list_view->move(20,20);
     m_show_list_view->createUI();
+
 //    m_show_list_view->setFocusPolicy(Qt::NoFocus);
 
 }
@@ -190,6 +191,7 @@ void car_leftView::shuru_click(){
     int y = GlobalPoint.y();
 
     m_show_list_view->move(x,y+20);
+    m_show_list_view->setFocus();
     m_show_list_view->show();
 
 //    m_listWidget_default->show();

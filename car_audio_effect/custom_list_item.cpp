@@ -8,12 +8,12 @@ this->setAttribute(Qt::WA_StyledBackground,true);
 void custom_list_item::enterEvent(QEvent *qevent){
 
 qDebug()<<"eeeeeeeeeeeeeeeee";
-this->setStyleSheet("background-color:rgb(0,255,0)");
+this->setStyleSheet("background-color:rgb(49,145,255)");
 
 }
 
 void custom_list_item::leaveEvent(QEvent *qevent){
 
     qDebug()<<"lllllllllllllllll";
-    this->setStyleSheet("background-color:rgb(255,0,0)");
+    this->setStyleSheet("background-color:rgb(62,62,62)");
 }

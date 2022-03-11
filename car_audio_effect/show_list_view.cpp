@@ -24,20 +24,21 @@ void show_list_view::createUI(){
     m_listWidget_default->move(0 ,0);
     for (int i =0;i<list_title.count();i++) {
         QListWidgetItem * IconItem = new QListWidgetItem(m_listWidget_default);
-        IconItem->setSizeHint(QSize(78,24));
+        IconItem->setSizeHint(QSize(70,24));
 
         //m_listWidget_default->insertItem(list_title.count(),IconItem);
         custom_list_item *custom_item = new custom_list_item(m_listWidget_default);
-        custom_item->setStyleSheet("background-color:rgb(255,0,0)");
-        QLabel *lbl2 = new QLabel(custom_item);
-        //lbl2->setFixedSize(20, 32);
-        lbl2->setText(list_title.at(i));
+        custom_item->setStyleSheet("background-color:rgb(62,62,62)");
 
+        QLabel *lbl2 = new QLabel(custom_item);
+        lbl2->setFixedSize(10, 24);
+        //lbl2->setText(list_title.at(i));
         lbl2->setStyleSheet("color:rgb(27,27,27);font-size:10px;font-family:'Source Han Sans CN Medium'");
+
         QLabel *lbl3 = new QLabel(custom_item);
         //lbl3->setFixedSize(20, 32);
         lbl3->setText(list_title.at(i));
-        lbl3->setStyleSheet("color:rgb(27,27,27);font-size:10px;font-family:'Source Han Sans CN Medium'");
+        lbl3->setStyleSheet("color:rgb(255,255,255);font-size:10px;font-family:'Source Han Sans CN Medium'");
         QHBoxLayout *horLayout = new QHBoxLayout;
         horLayout->setContentsMargins(0, 0, 0, 0);
         horLayout->setMargin(0);
@@ -52,7 +53,7 @@ void show_list_view::createUI(){
 
     m_listWidget_default->setStyleSheet(
 
-                "QListWidget{background-color:rgb(0,255,0);border:0px solid red; color:rgb(27,27,27);font-size:10px;font-family:'Source Han Sans CN Medium'}"
+                "QListWidget{background-color:transparent;border:1px solid white; color:rgb(27,27,27);font-size:10px;font-family:'Source Han Sans CN Medium'}"
 
                 "QListWidget::Item{border-bottom: 1px solid black;height:10px;}"
 
