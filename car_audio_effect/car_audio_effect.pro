@@ -34,7 +34,8 @@ SOURCES += \
     myline_edit.cpp \
     mylist_view.cpp \
     mytitlebar.cpp \
-    show_list_view.cpp
+    show_list_view.cpp \
+    sub_show_list_view.cpp
 
 HEADERS += \
     basewindow.h \
@@ -54,7 +55,8 @@ HEADERS += \
     myline_edit.h \
     mylist_view.h \
     mytitlebar.h \
-    show_list_view.h
+    show_list_view.h \
+    sub_show_list_view.h
 
 FORMS += \
     mainwindow.ui

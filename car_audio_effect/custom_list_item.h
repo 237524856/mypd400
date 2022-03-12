@@ -2,6 +2,7 @@
 #define CUSTOM_LIST_ITEM_H
 
 #include <QWidget>
+#include "sub_show_list_view.h"
 
 
 class custom_list_item : public QWidget
@@ -10,9 +11,15 @@ class custom_list_item : public QWidget
 public:
     explicit custom_list_item(QWidget *parent = nullptr);
 
+    sub_show_list_view *m_subView;
+
+    QString m_str_name;
+    QString m_str_leave_name;
     void enterEvent(QEvent *);                      //进入QWidget瞬间事件
     void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
 signals:
+    void item_enter();
+    void item_leave();
 
 };
 

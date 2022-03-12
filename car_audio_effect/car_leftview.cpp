@@ -161,7 +161,7 @@ void car_leftView::createUI(){
     //mylines
 
 
-    m_show_list_view = new show_list_view(this);
+    m_show_list_view = new show_list_view();
     m_show_list_view->resize(78,24*6+2);
     m_show_list_view->move(20,20);
     m_show_list_view->createUI();

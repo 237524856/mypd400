@@ -14,6 +14,9 @@ show_list_view::show_list_view(QWidget *parent) : QDialog(parent)
    // this->setStyleSheet("background:red");
     this->setFocus();
 
+    is_enter =false;
+    //m_subView->createUI();
+
 }
 
 void show_list_view::createUI(){
@@ -28,7 +31,10 @@ void show_list_view::createUI(){
 
         //m_listWidget_default->insertItem(list_title.count(),IconItem);
         custom_list_item *custom_item = new custom_list_item(m_listWidget_default);
+        custom_item->setObjectName(QString::number(i+100,10));
         custom_item->setStyleSheet("background-color:rgb(62,62,62)");
+        connect(custom_item, SIGNAL(item_enter()), this, SLOT(item_enter_clike()));
+        connect(custom_item, SIGNAL(item_leave()), this, SLOT(item_leave_clike()));
 
         QLabel *lbl2 = new QLabel(custom_item);
         lbl2->setFixedSize(10, 24);
@@ -116,9 +122,16 @@ void show_list_view::leaveEvent(QEvent *qevent){
 
 void show_list_view::focusOutEvent(QFocusEvent *e){
 
+    if(is_enter ==false)
     this->hide();
 }
+void show_list_view::item_enter_clike(){
 
+    is_enter =true;
+}
+void show_list_view::item_leave_clike(){
+    is_enter =false;
+}
 //void show_list_view::okBtn_press()
 //{
 //    this->accept();

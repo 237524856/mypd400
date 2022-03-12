@@ -8,6 +8,7 @@
 #include <QMouseEvent>
 #include <QLineEdit>
 #include <QListWidget>
+#include "custom_list_item.h"
 
 class show_list_view : public QDialog
 {
@@ -18,6 +19,7 @@ public:
     QListWidget *m_listWidget_default;
 
     void createUI();
+    bool is_enter;
 
 protected:
     QPoint move_point;                                    //移动的距离
@@ -37,6 +39,9 @@ protected:
 public slots:
     void audio_click(int);
     void select_item(QListWidgetItem*);
+
+    void item_enter_clike();
+    void item_leave_clike();
 
 signals:
 
