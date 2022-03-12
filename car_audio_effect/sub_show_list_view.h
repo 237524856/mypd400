@@ -15,10 +15,14 @@ class sub_show_list_view : public QDialog
 public:
     explicit sub_show_list_view(QWidget *parent = nullptr);
 
+    QListWidget *m_listWidget_default;
+
     bool is_sub_enter;
 
     void enterEvent(QEvent *);                      //进入QWidget瞬间事件
     void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
+
+    void createUI();
 
 signals:
 

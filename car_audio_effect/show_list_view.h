@@ -15,7 +15,7 @@ class show_list_view : public QDialog
     Q_OBJECT
 public:
     explicit show_list_view(QWidget *parent = nullptr);
-
+    ~show_list_view();
     QListWidget *m_listWidget_default;
 
     void createUI();

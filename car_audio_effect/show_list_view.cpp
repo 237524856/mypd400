@@ -18,7 +18,10 @@ show_list_view::show_list_view(QWidget *parent) : QDialog(parent)
     //m_subView->createUI();
 
 }
+show_list_view::~show_list_view(){
 
+    qDebug()<<"9999999999";
+}
 void show_list_view::createUI(){
 
     QVector<QString> list_title ={"空","前置","后置","中置","超低","环绕"};
