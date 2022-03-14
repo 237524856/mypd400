@@ -34,7 +34,9 @@ void show_list_view::createUI(){
 
         //m_listWidget_default->insertItem(list_title.count(),IconItem);
         custom_list_item *custom_item = new custom_list_item(m_listWidget_default);
-        custom_item->setObjectName(QString::number(i+100,10));
+        custom_item->setObjectName(list_title.at(i));
+        custom_item->createUI();
+
         custom_item->setStyleSheet("background-color:rgb(62,62,62)");
         connect(custom_item, SIGNAL(item_enter()), this, SLOT(item_enter_clike()));
         connect(custom_item, SIGNAL(item_leave()), this, SLOT(item_leave_clike()));
@@ -59,14 +61,11 @@ void show_list_view::createUI(){
         m_listWidget_default->setItemWidget(IconItem,custom_item);
     }
 
-
-    m_listWidget_default->setStyleSheet(
+        m_listWidget_default->setStyleSheet(
 
                 "QListWidget{background-color:transparent;border:1px solid white; color:rgb(27,27,27);font-size:10px;font-family:'Source Han Sans CN Medium'}"
 
                 "QListWidget::Item{border-bottom: 1px solid black;height:10px;}"
-
-
 
                 "QScrollBar:vertical{width:8px;background-color:rgb(45,45,45);border-radius:4px;margin-top:20px;margin-bottom:20px;}"
 

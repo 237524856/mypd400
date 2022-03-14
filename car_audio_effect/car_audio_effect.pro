@@ -35,6 +35,7 @@ SOURCES += \
     mylist_view.cpp \
     mytitlebar.cpp \
     show_list_view.cpp \
+    sub_custom_list_item.cpp \
     sub_show_list_view.cpp
 
 HEADERS += \
@@ -56,6 +57,7 @@ HEADERS += \
     mylist_view.h \
     mytitlebar.h \
     show_list_view.h \
+    sub_custom_list_item.h \
     sub_show_list_view.h
 
 FORMS += \

@@ -3,8 +3,10 @@
 
 #include <QObject>
 #include <QVector>
-
+#include <QPushButton>
 
 extern QVector<int>volumes;
+
+extern QVector<QPushButton *>shuru_btns;
 
 #endif // COMMON_DATASOURCE_H

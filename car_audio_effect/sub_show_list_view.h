@@ -22,7 +22,7 @@ public:
     void enterEvent(QEvent *);                      //进入QWidget瞬间事件
     void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
 
-    void createUI();
+    void createUI(const QVector<QString>list_title);
 
 signals:
 

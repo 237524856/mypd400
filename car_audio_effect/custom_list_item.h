@@ -19,6 +19,8 @@ public:
     QTimer *m_pTimer;
     QString m_str_name;
     QString m_str_leave_name;
+
+    void createUI();
     void enterEvent(QEvent *);                      //进入QWidget瞬间事件
     void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
 

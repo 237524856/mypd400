@@ -124,6 +124,7 @@ void car_leftView::createUI(){
             ch_shuru_btn->setText("前左高频");
             ch_shuru_btn->setStyleSheet("color:white;background-color:transparent;border: 2px solid rgb(57,57,57);font-size:9px;font-family:'Source Han Sans CN Medium'");
             connect(ch_shuru_btn, SIGNAL(clicked()), this, SLOT(shuru_click()));
+            shuru_btns.push_back(ch_shuru_btn);
         }
 
 
