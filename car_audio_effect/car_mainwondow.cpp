@@ -55,16 +55,24 @@ void car_mainWondow::createUI(){
     menu[0]->addAction("查看");
     menu[0]->addAction("工具");
 
-    act[0] = new QAction("新建",this);
-    act[0]->setShortcut(Qt::CTRL | Qt::Key_A );
+    act[0] = new QAction("混音音频",this);
+    //act[0]->setShortcut(Qt::CTRL | Qt::Key_A );
     act[0]->setToolTip("这是");
 
-    act[1] = new QAction("打开",this);
+    act[1] = new QAction("信号发生器",this);
     act[1]->setCheckable(true);
+
+    act[2] = new QAction("输入联调设置",this);
+    act[2]->setCheckable(true);
+
+    act[3] = new QAction("输出联调设置",this);
+    act[3]->setCheckable(true);
 
     menu[1] = new QMenu("选项");
     menu[1]->addAction(act[0]);
     menu[1]->addAction(act[1]);
+    menu[1]->addAction(act[2]);
+    menu[1]->addAction(act[3]);
 
     menu[2] = new QMenu("加密");
     menu[2]->addAction("打印设置");
@@ -85,9 +93,12 @@ void car_mainWondow::m_trigerMenu(QAction* act)
 {
 
 
-    m_effect_mainView.show();
-//    if(act->text() == "新建")
-//    {
+    //m_effect_mainView.show();
+    if(act->text() == "信号发生器")
+    {
+        m_signal_view.show();
         qDebug()<<"新建菜单被按下";
-//    }
+    }else{
+        m_effect_mainView.show();
+    }
 }

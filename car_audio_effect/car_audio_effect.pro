@@ -32,9 +32,11 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     myline_edit.cpp \
+    myline_edit2.cpp \
     mylist_view.cpp \
     mytitlebar.cpp \
     show_list_view.cpp \
+    signal_view/main_signal_view.cpp \
     sub_custom_list_item.cpp \
     sub_show_list_view.cpp
 
@@ -54,9 +56,11 @@ HEADERS += \
     fenpinqi_view.h \
     mainwindow.h \
     myline_edit.h \
+    myline_edit2.h \
     mylist_view.h \
     mytitlebar.h \
     show_list_view.h \
+    signal_view/main_signal_view.h \
     sub_custom_list_item.h \
     sub_show_list_view.h
 
