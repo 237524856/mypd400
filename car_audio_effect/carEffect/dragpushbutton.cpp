@@ -37,7 +37,6 @@ void dragpushbutton::mouseMoveEvent(QMouseEvent *event)
             if(this->mapToParent(this->rect().bottomRight()).y() >= this->parentWidget()->rect().height()){
                 this->move(this->pos().x(), this->parentWidget()->rect().height() - this->height());
             }
-
             //左边拖动的按钮
             if(this->objectName() == "115"){
                 //qDebug()<<"16-----";
@@ -46,8 +45,6 @@ void dragpushbutton::mouseMoveEvent(QMouseEvent *event)
                 this->setCursor(Qt::SizeAllCursor);
                // qDebug()<<"17-----";
             }
-
-
 
 
         //打印位置

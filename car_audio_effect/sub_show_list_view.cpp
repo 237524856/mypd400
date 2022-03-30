@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include "sub_custom_list_item.h"
+#include "common_datasource.h"
 
 sub_show_list_view::sub_show_list_view(QWidget *parent) : QDialog(parent)
 {
@@ -17,8 +18,6 @@ sub_show_list_view::sub_show_list_view(QWidget *parent) : QDialog(parent)
 }
 void sub_show_list_view::createUI(const QVector<QString>list_title){
 
-
-
     m_listWidget_default = new QListWidget(this);
     m_listWidget_default->resize(this->width(),this->height());
     m_listWidget_default->move(0 ,0);
@@ -27,10 +26,12 @@ void sub_show_list_view::createUI(const QVector<QString>list_title){
         IconItem->setSizeHint(QSize(70,24));
         //m_listWidget_default->insertItem(list_title.count(),IconItem);
         sub_custom_list_item *custom_item = new sub_custom_list_item(m_listWidget_default);
-        custom_item->setObjectName(QString::number(i+100,10));
+        //custom_item->setObjectName(QString::number(i+100,10));
+        custom_item->setObjectName(list_title.at(i));
         custom_item->setStyleSheet("background-color:rgb(62,62,62)");
-        connect(custom_item, SIGNAL(item_enter()), this, SLOT(item_enter_clike()));
-        connect(custom_item, SIGNAL(item_leave()), this, SLOT(item_leave_clike()));
+        connect(custom_item, SIGNAL(hide_show_view()), this, SLOT(item_hide_clike()));
+        //connect(custom_item, SIGNAL(item_enter()), this, SLOT(item_enter_clike()));
+        //connect(custom_item, SIGNAL(item_leave()), this, SLOT(item_leave_clike()));
 
         QLabel *lbl2 = new QLabel(custom_item);
         lbl2->setFixedSize(10, 24);
@@ -85,4 +86,11 @@ void sub_show_list_view::leaveEvent(QEvent *qevent){
     is_sub_enter = false;
     //qDebug()<<"lllllllkkkkkkllllllllll";
 
+}
+
+void sub_show_list_view::item_hide_clike(){
+
+    this->hide();
+    m_overshow_list_view->hide();
+    qDebug()<<"lllllllkkkkkkllllllllll";
 }

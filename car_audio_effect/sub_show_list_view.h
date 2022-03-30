@@ -24,6 +24,10 @@ public:
 
     void createUI(const QVector<QString>list_title);
 
+public slots:
+
+    void item_hide_clike();
+
 signals:
 
 };

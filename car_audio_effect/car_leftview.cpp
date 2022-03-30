@@ -122,6 +122,7 @@ void car_leftView::createUI(){
             ch_shuru_btn->resize(55,20);
             ch_shuru_btn->move(180-22-60,51+i*34);
             ch_shuru_btn->setText("前左高频");
+            ch_shuru_btn->setObjectName(QString::number(i-3+1000,10));
             ch_shuru_btn->setStyleSheet("color:white;background-color:transparent;border: 2px solid rgb(57,57,57);font-size:9px;font-family:'Source Han Sans CN Medium'");
             connect(ch_shuru_btn, SIGNAL(clicked()), this, SLOT(shuru_click()));
             shuru_btns.push_back(ch_shuru_btn);
@@ -167,6 +168,8 @@ void car_leftView::createUI(){
     m_show_list_view->move(20,20);
     m_show_list_view->createUI();
 
+    m_overshow_list_view = m_show_list_view;
+
 //    m_show_list_view->setFocusPolicy(Qt::NoFocus);
 
 }
@@ -185,7 +188,7 @@ void car_leftView::shuru_click(){
 
     QPushButton *btn = dynamic_cast<QPushButton *>(sender());
     qDebug()<<"xxxx"<<btn->x()<<btn->y();
-
+    shuru_btn_index = btn->objectName().toInt()-1000;
 
     QPoint GlobalPoint(btn->mapToGlobal(QPoint(0, 0)));//获取控件在窗体中的坐标
     int x = GlobalPoint.x();

@@ -1,4 +1,5 @@
 ﻿#include "sub_custom_list_item.h"
+#include "common_datasource.h"
 
 sub_custom_list_item::sub_custom_list_item(QWidget *parent) : QWidget(parent)
 {
@@ -14,11 +15,15 @@ void sub_custom_list_item::leaveEvent(QEvent *){
 }
 void sub_custom_list_item::mousePressEvent(QMouseEvent *qevent)            //鼠标按下事件
 {
-    this->hide();
+    //this->hide();
+
 
 }
 void sub_custom_list_item::mouseReleaseEvent(QMouseEvent *qevent)         //鼠标释放事件
 {
+    emit hide_show_view();
+    shuru_btns.at(shuru_btn_index)->setText(this->objectName());
+
 
 }
 void sub_custom_list_item::mouseMoveEvent(QMouseEvent *qevent)            //鼠标移动事件

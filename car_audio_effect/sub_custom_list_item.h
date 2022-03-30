@@ -17,6 +17,7 @@ public:
     void leaveEvent(QEvent *);                      //离开QWidget瞬间事件
 
 signals:
+    void hide_show_view();
 
 };
 
