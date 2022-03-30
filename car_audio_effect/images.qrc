@@ -59,5 +59,6 @@
         <file>images/signal/show_label.png</file>
         <file>images/signal/left_btn.png</file>
         <file>images/signal/right_btn.png</file>
+        <file>images/mix/bg.png</file>
     </qresource>
 </RCC>

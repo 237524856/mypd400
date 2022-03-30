@@ -31,6 +31,7 @@ SOURCES += \
     fenpinqi_view.cpp \
     main.cpp \
     mainwindow.cpp \
+    mix_view/mix_main_view.cpp \
     myline_edit.cpp \
     myline_edit2.cpp \
     mylist_view.cpp \
@@ -55,6 +56,7 @@ HEADERS += \
     custom_list_item.h \
     fenpinqi_view.h \
     mainwindow.h \
+    mix_view/mix_main_view.h \
     myline_edit.h \
     myline_edit2.h \
     mylist_view.h \

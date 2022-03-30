@@ -98,7 +98,13 @@ void car_mainWondow::m_trigerMenu(QAction* act)
     {
         m_signal_view.show();
         qDebug()<<"新建菜单被按下";
-    }else{
+    }else if(act->text() == "混音音频")
+    {
+        mix_view.show();
+        qDebug()<<"新建菜单被按下";
+    }
+
+    else{
         m_effect_mainView.show();
     }
 }
