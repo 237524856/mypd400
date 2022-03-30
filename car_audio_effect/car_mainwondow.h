@@ -10,6 +10,8 @@
 #include "car_leftview.h"
 #include "car_rightview.h"
 #include "car_midview.h"
+#include "signal_view/main_signal_view.h"
+#include "mix_view/mix_main_view.h"
 
 class car_mainWondow : public basewindow
 {
@@ -25,6 +27,8 @@ public:
     void createUI();
 
     car_effect_mainView m_effect_mainView;
+    main_signal_view m_signal_view;
+    mix_main_view mix_view;
 
     car_leftView *m_leftView;
     car_rightView *m_rightView;

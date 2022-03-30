@@ -33,5 +33,32 @@
         <file>images/shuru_img.png</file>
         <file>images/bg_image.png</file>
         <file>images/right_shuru_img.png</file>
+        <file>images/sing_view_bgImg.png</file>
+        <file>images/eq/bg.png</file>
+        <file>images/eq/bg_combobox.png</file>
+        <file>images/eq/bg_frequency.png</file>
+        <file>images/eq/bg_title.png</file>
+        <file>images/eq/btn_circle.png</file>
+        <file>images/eq/btn_huifu.png</file>
+        <file>images/eq/btn_switch.png</file>
+        <file>images/eq/矩形.png</file>
+        <file>images/eq/切换右.png</file>
+        <file>images/eq/切换左.png</file>
+        <file>images/eq/三角下拉.png</file>
+        <file>images/eq/形状结合.png</file>
+        <file>images/eq/圆_h.png</file>
+        <file>images/eq/圆_l.png</file>
+        <file>images/signal/22选项.png</file>
+        <file>images/signal/bg_nav.png</file>
+        <file>images/signal/icon_zhizhen.png</file>
+        <file>images/signal/音量线-刻度.png</file>
+        <file>images/signal/音量线-刻度-灰.png</file>
+        <file>images/signal/音量线-刻度-亮.png</file>
+        <file>images/signal/正弦刻度.png</file>
+        <file>images/signal/top_select.png</file>
+        <file>images/signal/show_label.png</file>
+        <file>images/signal/left_btn.png</file>
+        <file>images/signal/right_btn.png</file>
+        <file>images/mix/bg.png</file>
     </qresource>
 </RCC>
